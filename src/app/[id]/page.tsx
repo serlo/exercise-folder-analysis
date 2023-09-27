@@ -1,4 +1,4 @@
-import { SolvedData, changes, solved, titles } from '../../data'
+import { SolvedData, changes, solved, titles, visits } from '../../data'
 import { Details, DetailsProps } from '../../components/Details'
 
 export function generateStaticParams() {
@@ -17,11 +17,18 @@ export default function Index({ params }: { params: { id: string } }) {
     solvedByDate[key] = relevant
   }
 
+  const visitsByDate: { [key: string]: number } = {}
+
+  for (const key in visits) {
+    visitsByDate[key] = visits[key][params.id]
+  }
+
   const data: DetailsProps['data'] = {
     id: params.id,
     title: decodeURIComponent(titles[params.id]),
     changes: changes.find((c) => c[0] == params.id)![1],
     solved: solvedByDate,
+    visits: visitsByDate,
   }
 
   return (

@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@types/json-diff": "^1.0.0",
     "clsx": "^1.1.1",
+    "json-diff": "^1.0.6",
     "next": "13",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
