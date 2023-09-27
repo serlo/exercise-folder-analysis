@@ -6,7 +6,7 @@ import visitsData from './__dailyVisits.json'
 // Define types or interfaces for the JSON data
 type TitlesData = { [key: string]: string }
 type ChangesData = [string, { start: string; end: string; content: object }[]][]
-type SolvedData = {
+export type SolvedData = {
   [key: string]: {
     id: number
     path: string
