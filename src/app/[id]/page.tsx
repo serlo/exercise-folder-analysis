@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import { titles } from '../../data'
+import { changes } from '../../data'
 
 export function generateStaticParams() {
-  return Object.keys(titles).map((id) => ({ id }))
+  return changes.map(([id]) => ({ id }))
 }
 
 export default function Index({ params }: { params: { id: string } }) {
